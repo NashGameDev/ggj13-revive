@@ -58,9 +58,13 @@ static float deltaTime = 0;
         //self.spriteBatch = [CCSpriteBatchNode batchNodeWithFile:@"spritesheet.png"];
         //[self addChild:self.spriteBatch];
         
-        [LevelLoader LoadLevel:self.walls updateableOjects:self.objects player:self.player mainLayer:self filename:[[NSBundle mainBundle] pathForResource:@"level1" ofType:@".lvl"]];
+        //[LevelLoader LoadLevel:self.walls updateableOjects:self.objects player:self.player mainLayer:self filename:[[NSBundle mainBundle] pathForResource:@"level1" ofType:@".lvl"]];
+        NSString *str = [[NSBundle mainBundle] pathForResource:@"level1" ofType:@"lvl"];
+        NSLog(@"path: %@", str);
         
+        [LevelLoader LoadLevel:self.walls updateableOjects:self.objects player:self.player mainLayer:self filename:@"/Users/Owner/Dropbox/Files/level1.lvl"];
         [self schedule:@selector(tick:)];
+        
     }
 	return self;
 }

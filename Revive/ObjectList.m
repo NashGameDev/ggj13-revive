@@ -21,7 +21,6 @@ static NSDictionary *list;
 
 +(id)CreateFromID:(char)ID pos: (CGPoint)pos mainLayer:(id)mainLayer
 {
-    NSLog(@"CreateFromID");
     return [[list objectForKey:[NSString stringWithFormat:@"%c", ID]] CreateFromSelf:pos mainLayer:mainLayer];
 }
 

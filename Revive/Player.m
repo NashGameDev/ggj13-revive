@@ -173,33 +173,42 @@
     }
     CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2), self.y + (PLAYER_HEIGHT / 2), PLAYER_WIDTH, PLAYER_HEIGHT);
     
-    //Checks for heart collisions....
-    for (id object in self.mainLayer.objects)
+    //Checks for heart collisions
+    for (Heart *heart in self.mainLayer.objects)
     {
-        if([object isKindOfClass:[Heart class]])
+        if(heart.sprite.visible)
         {
-            Heart *heart = (Heart *)object;
             CGRect heartRect = CGRectMake(heart.sprite.position.x - 16, heart.sprite.position.y + 16, 32, 32);
             
             if(CGRectIntersectsRect(heartRect, collisionRect))
             {
+                heart.sprite.visible = false;
                 self.aliveAmount += 1;
             }
         }
     }
     
     //Spike collisions
-    for (id object in self.mainLayer.objects)
+    for (Spike *spike in self.mainLayer.objects)
     {
-        if([object isKindOfClass:[Spike class]])
+        CGRect spikeRect = CGRectMake(spike.sprite.position.x - 16, spike.sprite.position.y + 16, 32, 32);
+        
+        if(CGRectIntersectsRect(spikeRect, collisionRect))
         {
-            Spike *spike = (Spike *)object;
-            CGRect spikeRect = CGRectMake(spike.sprite.position.x - 16, spike.sprite.position.y + 16, 32, 32);
             
-            if(CGRectIntersectsRect(spikeRect, collisionRect))
-            {
-                self.aliveAmount += 1;
-            }
+        }
+    }
+}
+
+-(void)LoseHearts
+{
+    for (Heart *heart in self.mainLayer.objects)
+    {
+        if(!heart.sprite.visible)
+        {
+            heart.sprite.visible = true;
+            CCMoveTo *action = [CCMoveTo actionWithDuration:3 position:heart.startPoint];
+//            [self.sprite runAction:[CCSequence actions: action, [CCCallFuncN actionWithTarget:heart selector:]] nil]];
         }
     }
 }

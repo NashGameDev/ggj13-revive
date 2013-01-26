@@ -7,6 +7,8 @@
 
 @property(nonatomic, retain)CCSprite *sprite;
 @property(nonatomic, assign)MainLayer *mainLayer;
+@property(nonatomic, assign)CGPoint startPoint;
+@property(nonatomic, assign)BOOL canGrab;
 
 -(id)initWithPos: (CGPoint)pos mainLayer: (MainLayer *)mainLayer;
 -(id)initForList;

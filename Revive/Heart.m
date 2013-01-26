@@ -13,7 +13,9 @@
     {
         self.sprite = [CCSprite spriteWithFile:@"heart.png"];
         self.sprite.position = pos;
+        self.startPoint = pos;
         self.mainLayer = mainLayer;
+        self.canGrab = true;
         [mainLayer addChild:self.sprite];
     }
     return self;
@@ -23,7 +25,6 @@
 {
     return [[Heart alloc] initWithPos:pos mainLayer:mainLayer];
 }
-
 
 -(id)initForList
 {

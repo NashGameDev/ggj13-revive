@@ -20,7 +20,11 @@
 -(void)Update;
 -(void)MoveRight;
 -(void)MoveLeft;
+-(void)MoveUp;
+-(void)MoveDown;
+-(void)LoseHearts;
 -(void)Jump;
+
 
 -(id)initWithPos: (CGPoint)pos mainLayer: (MainLayer *)mainLayer;
 -(id)initForList;

@@ -14,7 +14,6 @@
     
     //CCSpriteFrame *spriteFrame = [CCSpriteFrame frameWithTextureFilename:@"spritesheet.png" rect: self.spriteRect];
     
-    NSLog(@"createfrom");
     wall.sprite = [CCSprite spriteWithFile:@"brick.png"];
     [mainLayer addChild:wall.sprite];
     

@@ -28,34 +28,38 @@
         buffer = [file readDataToEndOfFile];
         int index = 0;
         
-        int x = 0;
-        int y = 0;
         CGRect screenSize = [MainLayer screenSize];
+        
+        int x = 0;
+        int y = screenSize.size.height / 32;
         
         while(index < [buffer length])
         {
             Byte ID;
             [buffer getBytes:&ID range:NSMakeRange(index, 1)];
             
-            id object = [ObjectList CreateFromID:(char)ID pos:ccp(x * 32, y * 32) mainLayer: mainLayer];
-            if ([object isKindOfClass:[Wall class]])
+            id object = [ObjectList CreateFromID:(char)ID pos:ccp((x * 32) - 16, (y * 32) + 16) mainLayer: mainLayer];
+            if(object)
             {
-                [walls addObject:object];
-            }
-            else if([object isKindOfClass:[Player class]])
-            {
-                player = (Player *)object;
-            }
-            else
-            {
-                [updateableObjects addObject:object];
+                if ([object isKindOfClass:[Wall class]])
+                {
+                    [walls addObject:object];
+                }
+                else if([object isKindOfClass:[Player class]])
+                {
+                    player = (Player *)object;
+                }
+                else
+                {
+                    [updateableObjects addObject:object];
+                }
             }
             
             x += 1;
             if(x > screenSize.size.width / 32)
             {
                 x = 0;
-                y += 1;
+                y -= 1;
             }
             index += 1;
         }
