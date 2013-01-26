@@ -123,10 +123,9 @@
 		EBD9350216B43C7D001FDE27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9350116B43C7D001FDE27 /* main.m */; };
 		EBD9350516B43C7D001FDE27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9350416B43C7D001FDE27 /* AppDelegate.m */; };
 		EBD9350816B43C7D001FDE27 /* MainLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9350716B43C7D001FDE27 /* MainLayer.m */; };
-		EBD9351016B43CE8001FDE27 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9350F16B43CE8001FDE27 /* Player.m */; };
-		EBD9351316B43CFC001FDE27 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9351216B43CFC001FDE27 /* Wall.m */; };
 		EBD9351616B43F09001FDE27 /* LevelLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9351516B43F09001FDE27 /* LevelLoader.m */; };
 		EBD9351916B4400B001FDE27 /* ObjectList.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9351816B4400B001FDE27 /* ObjectList.m */; };
+		EBD9352316B45251001FDE27 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9352216B45251001FDE27 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -383,15 +382,13 @@
 		EBD9350416B43C7D001FDE27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		EBD9350616B43C7D001FDE27 /* MainLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
 		EBD9350716B43C7D001FDE27 /* MainLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
-		EBD9350E16B43CE8001FDE27 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Player.h; path = ../../../temp/Player.h; sourceTree = "<group>"; };
-		EBD9350F16B43CE8001FDE27 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Player.m; path = ../../../temp/Player.m; sourceTree = "<group>"; };
-		EBD9351116B43CFC001FDE27 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wall.h; path = ../../../temp/Wall.h; sourceTree = "<group>"; };
-		EBD9351216B43CFC001FDE27 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wall.m; path = ../../../temp/Wall.m; sourceTree = "<group>"; };
 		EBD9351416B43F09001FDE27 /* LevelLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLoader.h; sourceTree = "<group>"; };
 		EBD9351516B43F09001FDE27 /* LevelLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLoader.m; sourceTree = "<group>"; };
 		EBD9351716B4400B001FDE27 /* ObjectList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectList.h; sourceTree = "<group>"; };
 		EBD9351816B4400B001FDE27 /* ObjectList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectList.m; sourceTree = "<group>"; };
 		EBD9351A16B44200001FDE27 /* Prefab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefab.h; sourceTree = "<group>"; };
+		EBD9352116B45251001FDE27 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		EBD9352216B45251001FDE27 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,15 +445,13 @@
 				EBD9350416B43C7D001FDE27 /* AppDelegate.m */,
 				EBD9350616B43C7D001FDE27 /* MainLayer.h */,
 				EBD9350716B43C7D001FDE27 /* MainLayer.m */,
-				EBD9350E16B43CE8001FDE27 /* Player.h */,
-				EBD9350F16B43CE8001FDE27 /* Player.m */,
-				EBD9351116B43CFC001FDE27 /* Wall.h */,
-				EBD9351216B43CFC001FDE27 /* Wall.m */,
 				EBD9351416B43F09001FDE27 /* LevelLoader.h */,
 				EBD9351516B43F09001FDE27 /* LevelLoader.m */,
 				EBD9351716B4400B001FDE27 /* ObjectList.h */,
 				EBD9351816B4400B001FDE27 /* ObjectList.m */,
 				EBD9351A16B44200001FDE27 /* Prefab.h */,
+				EBD9352116B45251001FDE27 /* Player.h */,
+				EBD9352216B45251001FDE27 /* Player.m */,
 				EBD9339216B43C79001FDE27 /* Resources */,
 				EBD9339F16B43C79001FDE27 /* libs */,
 				EBD934FF16B43C7D001FDE27 /* Supporting Files */,
@@ -1010,10 +1005,9 @@
 				EBD9350216B43C7D001FDE27 /* main.m in Sources */,
 				EBD9350516B43C7D001FDE27 /* AppDelegate.m in Sources */,
 				EBD9350816B43C7D001FDE27 /* MainLayer.m in Sources */,
-				EBD9351016B43CE8001FDE27 /* Player.m in Sources */,
-				EBD9351316B43CFC001FDE27 /* Wall.m in Sources */,
 				EBD9351616B43F09001FDE27 /* LevelLoader.m in Sources */,
 				EBD9351916B4400B001FDE27 /* ObjectList.m in Sources */,
+				EBD9352316B45251001FDE27 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,6 +1131,7 @@
 				EBD9350D16B43C7D001FDE27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -23,12 +23,6 @@
         {
             Byte ID;
             [buffer getBytes:&ID range:NSMakeRange(index, 1)];
-            if(ID == 122)
-            {
-                index++;
-                isBuildingWorldBodies = true;
-                continue;
-            }
             
             int x;
             [buffer getBytes:&x range:NSMakeRange(index + 1, 4)];
@@ -44,8 +38,6 @@
                 x = CFSwapInt32(x);
                 y = CFSwapInt32(y);
             }
-            
-            
         }
         [file closeFile];
     }
