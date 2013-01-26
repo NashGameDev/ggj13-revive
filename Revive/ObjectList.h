@@ -1,9 +1,10 @@
 #import <Foundation/Foundation.h>
+#import "MainLayer.h"
 
 @interface ObjectList : NSObject
 
 +(void)CreateList;
-+(id)CreateFromID: (Byte)ID pos: (CGPoint)pos;
++(id)CreateFromID: (char)ID pos: (CGPoint)pos mainLayer:(MainLayer *)mainLayer;
 +(void)ReleaseList;
 
 @end

@@ -126,6 +126,15 @@
 		EBD9351616B43F09001FDE27 /* LevelLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9351516B43F09001FDE27 /* LevelLoader.m */; };
 		EBD9351916B4400B001FDE27 /* ObjectList.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9351816B4400B001FDE27 /* ObjectList.m */; };
 		EBD9352316B45251001FDE27 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9352216B45251001FDE27 /* Player.m */; };
+		EBD9352716B45CA2001FDE27 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9352616B45CA2001FDE27 /* Wall.m */; };
+		EBD9352A16B47947001FDE27 /* level1.lvl in Sources */ = {isa = PBXBuildFile; fileRef = EBD9352916B47947001FDE27 /* level1.lvl */; };
+		EBD9352C16B47A48001FDE27 /* dude1.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD9352B16B47A48001FDE27 /* dude1.png */; };
+		EBD9352E16B47A53001FDE27 /* brick.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD9352D16B47A53001FDE27 /* brick.png */; };
+		EBD9353116B488EC001FDE27 /* Spike.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD9353016B488EC001FDE27 /* Spike.m */; };
+		EBD9353316B48B4F001FDE27 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD9353216B48B4F001FDE27 /* grass.png */; };
+		EBD936B416B48DBD001FDE27 /* level1.lvl in Resources */ = {isa = PBXBuildFile; fileRef = EBD9352916B47947001FDE27 /* level1.lvl */; };
+		EBD936B716B48E8B001FDE27 /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD936B616B48E8B001FDE27 /* Heart.m */; };
+		EBD936B916B49022001FDE27 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD936B816B49022001FDE27 /* heart.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,6 +398,17 @@
 		EBD9351A16B44200001FDE27 /* Prefab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefab.h; sourceTree = "<group>"; };
 		EBD9352116B45251001FDE27 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		EBD9352216B45251001FDE27 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		EBD9352516B45CA2001FDE27 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		EBD9352616B45CA2001FDE27 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
+		EBD9352916B47947001FDE27 /* level1.lvl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.lvl; sourceTree = "<group>"; };
+		EBD9352B16B47A48001FDE27 /* dude1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dude1.png; sourceTree = "<group>"; };
+		EBD9352D16B47A53001FDE27 /* brick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick.png; sourceTree = "<group>"; };
+		EBD9352F16B488EB001FDE27 /* Spike.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spike.h; sourceTree = "<group>"; };
+		EBD9353016B488EC001FDE27 /* Spike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spike.m; sourceTree = "<group>"; };
+		EBD9353216B48B4F001FDE27 /* grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grass.png; sourceTree = "<group>"; };
+		EBD936B516B48E8B001FDE27 /* Heart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Heart.h; sourceTree = "<group>"; };
+		EBD936B616B48E8B001FDE27 /* Heart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Heart.m; sourceTree = "<group>"; };
+		EBD936B816B49022001FDE27 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +472,12 @@
 				EBD9351A16B44200001FDE27 /* Prefab.h */,
 				EBD9352116B45251001FDE27 /* Player.h */,
 				EBD9352216B45251001FDE27 /* Player.m */,
+				EBD9352516B45CA2001FDE27 /* Wall.h */,
+				EBD9352616B45CA2001FDE27 /* Wall.m */,
+				EBD9352F16B488EB001FDE27 /* Spike.h */,
+				EBD9353016B488EC001FDE27 /* Spike.m */,
+				EBD936B516B48E8B001FDE27 /* Heart.h */,
+				EBD936B616B48E8B001FDE27 /* Heart.m */,
 				EBD9339216B43C79001FDE27 /* Resources */,
 				EBD9339F16B43C79001FDE27 /* libs */,
 				EBD934FF16B43C7D001FDE27 /* Supporting Files */,
@@ -462,6 +488,12 @@
 		EBD9339216B43C79001FDE27 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBD9352916B47947001FDE27 /* level1.lvl */,
+				EBD936B816B49022001FDE27 /* heart.png */,
+				EBD9352D16B47A53001FDE27 /* brick.png */,
+				EBD9352B16B47A48001FDE27 /* dude1.png */,
+				EBD9353216B48B4F001FDE27 /* grass.png */,
+				EBD9352816B478A4001FDE27 /* Levels */,
 				EBD9339A16B43C79001FDE27 /* fps_images.png */,
 				EBD9339C16B43C79001FDE27 /* icon.icns */,
 				EBD9339E16B43C79001FDE27 /* Info.plist */,
@@ -834,6 +866,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EBD9352816B478A4001FDE27 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Levels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -885,11 +924,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD936B416B48DBD001FDE27 /* level1.lvl in Resources */,
 				EBD9339616B43C79001FDE27 /* InfoPlist.strings in Resources */,
 				EBD9339916B43C79001FDE27 /* MainMenu.xib in Resources */,
 				EBD9339B16B43C79001FDE27 /* fps_images.png in Resources */,
 				EBD9339D16B43C79001FDE27 /* icon.icns in Resources */,
 				EBD934E316B43C7C001FDE27 /* ChangeLog in Resources */,
+				EBD9352C16B47A48001FDE27 /* dude1.png in Resources */,
+				EBD9352E16B47A53001FDE27 /* brick.png in Resources */,
+				EBD9353316B48B4F001FDE27 /* grass.png in Resources */,
+				EBD936B916B49022001FDE27 /* heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,6 +1052,10 @@
 				EBD9351616B43F09001FDE27 /* LevelLoader.m in Sources */,
 				EBD9351916B4400B001FDE27 /* ObjectList.m in Sources */,
 				EBD9352316B45251001FDE27 /* Player.m in Sources */,
+				EBD9352716B45CA2001FDE27 /* Wall.m in Sources */,
+				EBD9352A16B47947001FDE27 /* level1.lvl in Sources */,
+				EBD9353116B488EC001FDE27 /* Spike.m in Sources */,
+				EBD936B716B48E8B001FDE27 /* Heart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,6 +1131,7 @@
 				GCC_PREFIX_HEADER = Revive/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Revive/libs/kazmath/include\"";
 				INFOPLIST_FILE = Revive/Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1103,6 +1152,7 @@
 				GCC_PREFIX_HEADER = Revive/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"Revive/libs/kazmath/include\"";
 				INFOPLIST_FILE = Revive/Resources/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HelloWorldLayer.h"
+#import "MainLayer.h"
 
 @implementation ReviveAppDelegate
 @synthesize window=window_, glView=glView_;
@@ -33,7 +33,7 @@
 	// Center main window
 	[window_ center];
 	
-	[director runWithScene:[HelloWorldLayer scene]];
+	[director runWithScene:[MainLayer scene]];
 }
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed: (NSApplication *) theApplication

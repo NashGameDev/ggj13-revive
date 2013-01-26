@@ -1,13 +1,15 @@
 #import "ObjectList.h"
 #import "Wall.h"
+#import "Player.h"
 
 @implementation ObjectList
-static NSArray *list;
+static NSDictionary *list;
 
 +(void)CreateList
 {
-    list = [[NSArray alloc] initWithObjects:
-            [[Wall alloc] initForList:CGRectMake(0, 0, 32, 32)],
+    list = [[NSDictionary alloc] initWithObjectsAndKeys:
+            [[Wall alloc] initForList:CGRectMake(0, 0, 32, 32)], @"#",
+            [[Player alloc] initForList], @"@",
             nil];
 }
 
@@ -17,9 +19,10 @@ static NSArray *list;
     list = nil;
 }
 
-+(id)CreateFromID:(Byte)ID pos: (CGPoint)pos
++(id)CreateFromID:(char)ID pos: (CGPoint)pos mainLayer:(id)mainLayer
 {
-    return [[list objectAtIndex:ID] CreateFromSelf:pos];
+    NSLog(@"CreateFromID");
+    return [[list objectForKey:[NSString stringWithFormat:@"%c", ID]] CreateFromSelf:pos mainLayer:mainLayer];
 }
 
 @end
