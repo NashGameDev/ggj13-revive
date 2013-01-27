@@ -15,7 +15,6 @@
 @property(nonatomic, assign)float velocityY;
 @property(nonatomic, assign)BOOL affectedByGravity;
 @property(nonatomic, assign)MainLayer *mainLayer;
-@property(nonatomic, assign)float aliveAmount;
 
 -(void)Update;
 -(void)MoveRight;

@@ -8,7 +8,7 @@
 #define PLAYER_SPEED 0.2f
 #define PLAYER_MAX_SPEED 2.0f
 #define PLAYER_WIDTH 32.0f
-#define PLAYER_HEIGHT 32.0f
+#define PLAYER_HEIGHT 64.0f
 #define PLAYER_JUMP_SPEED 6.0f
 
 @implementation Player
@@ -32,7 +32,7 @@
 -(void)setY:(float)y
 {
     if(self.sprite)
-        self.sprite.position = ccp(self.sprite.position.x, y );
+        self.sprite.position = ccp(self.sprite.position.x, y);
 }
 
 -(float)x
@@ -90,12 +90,13 @@
     //Check to see if he can fall
     if (!self.falling && !self.jumping)
     {
-        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2), self.y + (PLAYER_HEIGHT / 2) + 1, PLAYER_WIDTH, PLAYER_HEIGHT);
+        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2), self.y + (PLAYER_HEIGHT / 2) - 1, PLAYER_WIDTH, PLAYER_HEIGHT);
         BOOL canFall = true;
         for (Wall *wall in self.mainLayer.walls)
         {
             if(CGRectIntersectsRect(collisionRect, wall.collisionRect))
             {
+                NSLog(@"collide");
                 canFall = false;
             }
         }
@@ -104,13 +105,13 @@
     }
     if(self.falling && self.affectedByGravity)
     {
-        self.velocityY += PLAYER_GRAVITY;
+        self.velocityY -= PLAYER_GRAVITY;
     }
     
     //Falling and Jumping collision check
     if(self.velocityY != 0)
     {
-        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2), self.y + (PLAYER_HEIGHT / 2) + self.velocityY, PLAYER_WIDTH, PLAYER_HEIGHT);
+        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2.0f), self.y + (PLAYER_HEIGHT / 2.0f) + self.velocityY, PLAYER_WIDTH, PLAYER_HEIGHT);
         
         BOOL canMove = true;
         for (Wall *wall in self.mainLayer.walls)
@@ -183,7 +184,7 @@
             if(CGRectIntersectsRect(heartRect, collisionRect))
             {
                 heart.sprite.visible = false;
-                self.aliveAmount += 1;
+                self.mainLayer.lifeGained = 0;
             }
         }
     }
@@ -195,6 +196,7 @@
         
         if(CGRectIntersectsRect(spikeRect, collisionRect))
         {
+            [self LoseHearts];
             
         }
     }
@@ -207,8 +209,7 @@
         if(!heart.sprite.visible)
         {
             heart.sprite.visible = true;
-            CCMoveTo *action = [CCMoveTo actionWithDuration:3 position:heart.startPoint];
-//            [self.sprite runAction:[CCSequence actions: action, [CCCallFuncN actionWithTarget:heart selector:]] nil]];
+            [heart resetPos];
         }
     }
 }
@@ -230,6 +231,7 @@
     self.sprite = [CCSprite spriteWithSpriteFrame:spriteFrame];
     self.x = pos.x;
     self.y = pos.y;
+    self.affectedByGravity = true;
     [mainLayer addChild:self.sprite];
     
     return self;

@@ -8,13 +8,14 @@
 -(id)CreateFromSelf:(CGPoint)pos mainLayer:(MainLayer *)mainLayer
 {
     Wall *wall = [[Wall alloc] init];
+    wall.sprite = [CCSprite spriteWithFile:@"brick.png"];
     wall.sprite.position = pos;
     wall.spriteRect = self.spriteRect;
-    wall.collisionRect = CGRectMake(pos.x, pos.y, self.spriteRect.size.width, self.spriteRect.size.height);
+    wall.collisionRect = CGRectMake(pos.x - 16, pos.y + 16, self.spriteRect.size.width, self.spriteRect.size.height);
     
     //CCSpriteFrame *spriteFrame = [CCSpriteFrame frameWithTextureFilename:@"spritesheet.png" rect: self.spriteRect];
     
-    wall.sprite = [CCSprite spriteWithFile:@"brick.png"];
+    
     [mainLayer addChild:wall.sprite];
     
     return wall;

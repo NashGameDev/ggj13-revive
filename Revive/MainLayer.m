@@ -32,18 +32,13 @@ static float deltaTime = 0;
     deltaTime += dt;
     while (deltaTime >= 1/30.0f)
     {
-        dt -= 1/30.0f;
+        deltaTime -= 1/30.0f;
         [self.player Update];
         for(id object in self.objects)
         {
             [object Update];
         }
     }
-}
-
--(void)IncreaseLife
-{
-    self.lifeGained += 1;
 }
 
 -(id) init
@@ -59,12 +54,11 @@ static float deltaTime = 0;
         //[self addChild:self.spriteBatch];
         
         //[LevelLoader LoadLevel:self.walls updateableOjects:self.objects player:self.player mainLayer:self filename:[[NSBundle mainBundle] pathForResource:@"level1" ofType:@".lvl"]];
-        NSString *str = [[NSBundle mainBundle] pathForResource:@"level1" ofType:@"lvl"];
-        NSLog(@"path: %@", str);
+        NSString *filename = [[NSBundle mainBundle] pathForResource:@"level1" ofType:@"lvl"];
         
-        [LevelLoader LoadLevel:self.walls updateableOjects:self.objects player:self.player mainLayer:self filename:@"/Users/Owner/Dropbox/Files/level1.lvl"];
+        [LevelLoader LoadLevel:self.walls updateableOjects:self.objects player:self.player mainLayer:self filename:filename];
+        
         [self schedule:@selector(tick:)];
-        
     }
 	return self;
 }

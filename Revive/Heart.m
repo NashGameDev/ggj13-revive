@@ -26,6 +26,18 @@
     return [[Heart alloc] initWithPos:pos mainLayer:mainLayer];
 }
 
+-(void)doneReset
+{
+    self.canGrab = true;
+}
+
+-(void)resetPos
+{
+    self.canGrab = false;
+    CCMoveTo *action = [CCMoveTo actionWithDuration:3 position:self.startPoint];
+    [self.sprite runAction:[CCSequence actions:action, [CCCallFuncN actionWithTarget:self selector:@selector(doneReset)], nil]];
+}
+
 -(id)initForList
 {
     return (self = [super init]);

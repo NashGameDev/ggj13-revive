@@ -23,7 +23,7 @@
     NSFileHandle* file = [NSFileHandle fileHandleForReadingAtPath:filename];
     if(file)
     {
-        NSLog(@"file good");
+        NSLog(@"file is good");
         NSData* buffer;
         buffer = [file readDataToEndOfFile];
         int index = 0;
@@ -31,14 +31,14 @@
         CGRect screenSize = [MainLayer screenSize];
         
         int x = 0;
-        int y = screenSize.size.height / 32;
+        int y = (screenSize.size.height / 32) + 1;
         
         while(index < [buffer length])
         {
             Byte ID;
             [buffer getBytes:&ID range:NSMakeRange(index, 1)];
             
-            id object = [ObjectList CreateFromID:(char)ID pos:ccp((x * 32) - 16, (y * 32) + 16) mainLayer: mainLayer];
+            id object = [ObjectList CreateFromID:(char)ID pos:ccp((x * 32) + 16, (y * 32) + 16) mainLayer: mainLayer];
             if(object)
             {
                 if ([object isKindOfClass:[Wall class]])
@@ -47,20 +47,20 @@
                 }
                 else if([object isKindOfClass:[Player class]])
                 {
-                    player = (Player *)object;
+                    mainLayer.player = (Player *)object;
                 }
                 else
                 {
                     [updateableObjects addObject:object];
                 }
             }
-            
             x += 1;
-            if(x > screenSize.size.width / 32)
+            if((char)ID == '\n')
             {
-                x = 0;
                 y -= 1;
+                x = 0;
             }
+            
             index += 1;
         }
         [file closeFile];

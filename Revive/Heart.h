@@ -12,5 +12,7 @@
 
 -(id)initWithPos: (CGPoint)pos mainLayer: (MainLayer *)mainLayer;
 -(id)initForList;
+-(void)resetPos;
+-(void)doneReset;
 
 @end
