@@ -134,6 +134,7 @@
 		EBD9353316B48B4F001FDE27 /* grass.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD9353216B48B4F001FDE27 /* grass.png */; };
 		EBD936B716B48E8B001FDE27 /* Heart.m in Sources */ = {isa = PBXBuildFile; fileRef = EBD936B616B48E8B001FDE27 /* Heart.m */; };
 		EBD936B916B49022001FDE27 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = EBD936B816B49022001FDE27 /* heart.png */; };
+		EBD936C216B4B775001FDE27 /* level1.lvl in Resources */ = {isa = PBXBuildFile; fileRef = EBD9352916B47947001FDE27 /* level1.lvl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -923,6 +924,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD936C216B4B775001FDE27 /* level1.lvl in Resources */,
 				EBD9339616B43C79001FDE27 /* InfoPlist.strings in Resources */,
 				EBD9339916B43C79001FDE27 /* MainMenu.xib in Resources */,
 				EBD9339B16B43C79001FDE27 /* fps_images.png in Resources */,

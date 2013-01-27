@@ -11,7 +11,7 @@
     wall.sprite = [CCSprite spriteWithFile:@"brick.png"];
     wall.sprite.position = pos;
     wall.spriteRect = self.spriteRect;
-    wall.collisionRect = CGRectMake(pos.x - 16, pos.y + 16, self.spriteRect.size.width, self.spriteRect.size.height);
+    wall.collisionRect = CGRectOffset(CGRectMake(0, 0, 32, 32), pos.x-16, pos.y - 16);
     
     //CCSpriteFrame *spriteFrame = [CCSpriteFrame frameWithTextureFilename:@"spritesheet.png" rect: self.spriteRect];
     

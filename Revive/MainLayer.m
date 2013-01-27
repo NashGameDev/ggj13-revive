@@ -33,9 +33,9 @@ static float deltaTime = 0;
 -(void)tick: (ccTime)dt
 {
     deltaTime += dt;
-    while (deltaTime >= 1/30.0f)
+    while (deltaTime >= 1/60.0f)
     {
-        deltaTime -= 1/30.0f;
+        deltaTime -= 1/60.0f;
         [self.player Update];
         for(id object in self.objects)
         {

@@ -90,7 +90,7 @@
     //Check to see if he can fall
     if (!self.falling && !self.jumping)
     {
-        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2), self.y + (PLAYER_HEIGHT / 2) - 1, PLAYER_WIDTH, PLAYER_HEIGHT);
+        CGRect collisionRect = CGRectOffset(CGRectMake(0, 1, PLAYER_WIDTH, PLAYER_HEIGHT), self.x-PLAYER_WIDTH / 2, self.y - (PLAYER_HEIGHT / 2));
         BOOL canFall = true;
         for (Wall *wall in self.mainLayer.walls)
         {
@@ -108,10 +108,11 @@
         self.velocityY -= PLAYER_GRAVITY;
     }
     
+    
     //Falling and Jumping collision check
     if(self.velocityY != 0)
     {
-        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2.0f), self.y + (PLAYER_HEIGHT / 2.0f) + self.velocityY, PLAYER_WIDTH, PLAYER_HEIGHT);
+       CGRect collisionRect = CGRectOffset(CGRectMake(0, self.velocityY, PLAYER_WIDTH, PLAYER_HEIGHT), self.x-(PLAYER_WIDTH / 2), self.y - (PLAYER_HEIGHT / 2));
         
         BOOL canMove = true;
         for (Wall *wall in self.mainLayer.walls)
@@ -124,7 +125,7 @@
                     canMove = false;
                     self.falling = false;
                     self.velocityY = 0;
-                    self.y = wall.sprite.position.y + (wall.collisionRect.size.height / 2) + (PLAYER_HEIGHT / 2);
+                    self.y = wall.sprite.position.y + (wall.collisionRect.size.height / 2) + (PLAYER_HEIGHT / 2) + 1;
                 }
                 //Jumping collide
                 else
@@ -133,8 +134,9 @@
                     self.jumping = false;
                     self.falling = true;
                     self.velocityY = 0;
-                    self.y = wall.sprite.position.y - (wall.collisionRect.size.height / 2) - (PLAYER_HEIGHT / 2);
+                    self.y = wall.sprite.position.y - (wall.collisionRect.size.height / 2) - (PLAYER_HEIGHT / 2) - 1;
                 }
+                break;
             }
         }
         if(canMove)
@@ -144,7 +146,7 @@
     }
     if(self.velocityX != 0)
     {
-        CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2) + self.velocityX, self.y + (PLAYER_HEIGHT / 2) , PLAYER_WIDTH, PLAYER_HEIGHT);
+        CGRect collisionRect = CGRectOffset(CGRectMake(-self.velocityX, 0, PLAYER_WIDTH, PLAYER_HEIGHT), self.x-(PLAYER_WIDTH / 2), self.y - PLAYER_HEIGHT / 2);
         
         BOOL canMove = true;
         for (Wall *wall in self.mainLayer.walls)
@@ -154,16 +156,17 @@
                 //Moving left collide
                 if(self.velocityX < 0)
                 {
+                    NSLog(@"collide left");
                     canMove = false;
                     self.velocityX = 0;
-                    self.x = wall.sprite.position.x + (wall.collisionRect.size.width / 2) + (PLAYER_WIDTH / 2);
+                    self.x = wall.sprite.position.x + 16 + (PLAYER_WIDTH / 2) + 1;
                 }
                 //Moving right collide
                 else
                 {
                     canMove = false;
                     self.velocityX = 0;
-                    self.x = wall.sprite.position.x - (wall.collisionRect.size.width / 2) - (PLAYER_WIDTH / 2);
+                    self.x = wall.sprite.position.x - 16 - (PLAYER_WIDTH / 2) - 1;
                 }
             }
         }
@@ -172,7 +175,7 @@
             self.x += self.velocityX;
         }
     }
-    CGRect collisionRect = CGRectMake(self.x - (PLAYER_WIDTH / 2), self.y + (PLAYER_HEIGHT / 2), PLAYER_WIDTH, PLAYER_HEIGHT);
+    CGRect collisionRect = CGRectOffset(CGRectMake(0, 0, PLAYER_WIDTH, PLAYER_HEIGHT), self.x-PLAYER_WIDTH / 2, self.y - PLAYER_HEIGHT / 2);
     
     //Checks for heart collisions
     for (Heart *heart in self.mainLayer.objects)
