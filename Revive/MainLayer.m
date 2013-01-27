@@ -2,6 +2,9 @@
 #import "LevelLoader.h"
 #import "ObjectList.h"
 
+//Used for key variables
+#import <Carbon/Carbon.h>
+
 @implementation MainLayer
 
 @synthesize walls = _walls;
@@ -41,11 +44,33 @@ static float deltaTime = 0;
     }
 }
 
+-(BOOL)ccKeyDown:(NSEvent *)key
+{
+    UInt16 keyCode = [key keyCode];
+    if(keyCode == kVK_RightArrow)
+    {
+        [self.player MoveRight];
+    }
+    else if(keyCode == kVK_LeftArrow)
+    {
+        [self.player MoveLeft];
+    }
+    return true;
+}
+
+-(BOOL)ccKeyUp:(NSEvent *)key
+{
+    UInt16 keyCode = [key keyCode];
+    
+}
+
 -(id) init
 {
 	if((self=[super init]))
     {
         [ObjectList CreateList];
+        
+        self.isKeyboardEnabled = true;
         
         self.walls = [[NSMutableArray alloc] init];
         self.objects = [[NSMutableArray alloc] init];
